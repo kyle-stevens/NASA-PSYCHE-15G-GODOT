@@ -5,7 +5,7 @@ var rest_point
 var rest_nodes = []
 
 func _ready():
-	rest_nodes = get_tree().get_nodes_in_group("rest_zones")
+	rest_nodes = get_tree().get_nodes_in_group("rest_zones_02")
 
 	
 	rest_point = rest_nodes[0].global_position
