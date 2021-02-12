@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Object.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Zones.tscn" type="PackedScene" id=2]
+
+[node name="TestScne" type="Node2D"]
+
+[node name="Zones" parent="." instance=ExtResource( 2 )]
+position = Vector2( 168, 136 )
+
+[node name="Zones2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 744, 184 )
+object_id = 1
+
+[node name="Zones3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 408, 376 )
+
+[node name="Zones4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 840, 488 )
+object_id = 1
+
+[node name="Object2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 528, 176 )
+object_id = 1
+
+[node name="Object" parent="." instance=ExtResource( 1 )]
+position = Vector2( 80, 64 )
