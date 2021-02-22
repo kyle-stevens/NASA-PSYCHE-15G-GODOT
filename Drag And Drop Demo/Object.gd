@@ -28,6 +28,7 @@ func _physics_process(delta):
 		global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
 #		look_at(get_global_mouse_position())
 	else:
+		#Use distance calculation section to determine start position here instead
 		global_position = lerp(global_position, rest_point, 10 * delta)
 #		rotation = lerp_angle(rotation, 0, 10 * delta)
 		
@@ -37,6 +38,7 @@ func _input(event):
 			selected = false
 			var shortest_dist = 75
 			for child in rest_nodes:
+				#Reuse this section to define starting position
 				var distance = global_position.distance_to(child.global_position)
 				if distance < shortest_dist and  object_id == child.object_id:
 					child.select()

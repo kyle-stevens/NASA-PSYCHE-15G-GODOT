@@ -20,7 +20,7 @@ position = Vector2( 840, 488 )
 object_id = 1
 
 [node name="Object2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 528, 176 )
+position = Vector2( 719, 169 )
 object_id = 1
 
 [node name="Object" parent="." instance=ExtResource( 1 )]
