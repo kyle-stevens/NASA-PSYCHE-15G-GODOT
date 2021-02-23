@@ -6,22 +6,34 @@
 [node name="TestScne" type="Node2D"]
 
 [node name="Zones" parent="." instance=ExtResource( 2 )]
-position = Vector2( 168, 136 )
-
-[node name="Zones2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 744, 184 )
-object_id = 1
+position = Vector2( 128, 128 )
 
 [node name="Zones3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 408, 376 )
+position = Vector2( 128, 384 )
+object_id = 1
+
+[node name="Zones6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 896, 192 )
+
+[node name="Zones8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 896, 448 )
+object_id = 1
+
+[node name="Zones2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 512, 272 )
+object_id = 2
 
 [node name="Zones4" parent="." instance=ExtResource( 2 )]
-position = Vector2( 840, 488 )
-object_id = 1
+position = Vector2( 320, 512 )
+object_id = 2
 
-[node name="Object2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 528, 176 )
-object_id = 1
+[node name="Object3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 232, 520 )
 
 [node name="Object" parent="." instance=ExtResource( 1 )]
-position = Vector2( 80, 64 )
+position = Vector2( 632, 456 )
+object_id = 2
+
+[node name="Object2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 848, 512 )
+object_id = 1
