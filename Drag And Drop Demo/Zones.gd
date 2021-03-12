@@ -3,6 +3,7 @@ extends Position2D
 signal correct()
 export var correct = false
 export(int, "Object 1", "Object 2", "Object 3") var object_id
+export var is_goal : bool
 
 func _draw():
 	if object_id == 0:
@@ -19,13 +20,9 @@ func _draw():
 	null)
 	#modulate.a = 0.05
 	
-func select():
-	for child in get_tree().get_nodes_in_group("zone"):
-		child.deselect()
-	modulate = Color.webmaroon
+func select(object):
+	modulate = Color.green
 	#modulate.a = 0.05
-	if correct:
-		emit_signal("correct")
 	
 func deselect():
 	modulate = Color.white

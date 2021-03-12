@@ -1,39 +1,45 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Object.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Zones.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI.tscn" type="PackedScene" id=3]
 
 [node name="TestScne" type="Node2D"]
 
-[node name="Zones" parent="." instance=ExtResource( 2 )]
+[node name="group 1 goal" parent="." instance=ExtResource( 2 )]
+position = Vector2( 352, 58 )
+is_goal = true
+
+[node name="group 1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 128, 128 )
 
-[node name="Zones3" parent="." instance=ExtResource( 2 )]
+[node name="group 2 goal" parent="." instance=ExtResource( 2 )]
+position = Vector2( 352, 314 )
+object_id = 1
+is_goal = true
+
+[node name="group 2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 128, 384 )
 object_id = 1
 
-[node name="Zones6" parent="." instance=ExtResource( 2 )]
-position = Vector2( 896, 192 )
-
-[node name="Zones8" parent="." instance=ExtResource( 2 )]
-position = Vector2( 896, 448 )
-object_id = 1
-
-[node name="Zones2" parent="." instance=ExtResource( 2 )]
+[node name="group 3 goal" parent="." instance=ExtResource( 2 )]
 position = Vector2( 512, 272 )
 object_id = 2
+is_goal = true
 
-[node name="Zones4" parent="." instance=ExtResource( 2 )]
+[node name="group 3 " parent="." instance=ExtResource( 2 )]
 position = Vector2( 320, 512 )
 object_id = 2
 
-[node name="Object3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 232, 520 )
+[node name="object 1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 128, 112 )
 
-[node name="Object" parent="." instance=ExtResource( 1 )]
-position = Vector2( 632, 456 )
+[node name="object 3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 376, 512 )
 object_id = 2
 
-[node name="Object2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 848, 512 )
+[node name="object 2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 80, 416 )
 object_id = 1
+
+[node name="UI" parent="." instance=ExtResource( 3 )]

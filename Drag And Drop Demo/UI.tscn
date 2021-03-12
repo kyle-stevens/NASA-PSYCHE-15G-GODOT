@@ -1,0 +1,27 @@
+[gd_scene format=2]
+
+[node name="UI" type="Control"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 760.0
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 0.756863 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InfoText" type="RichTextLabel" parent="."]
+margin_left = 808.0
+margin_right = 1008.0
+margin_bottom = 40.0
+text = "
+LoremIpsumDolorSitAmet
+"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
