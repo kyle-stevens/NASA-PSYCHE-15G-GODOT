@@ -6,22 +6,33 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 760.0
-margin_right = 1024.0
-margin_bottom = 600.0
-color = Color( 0, 0, 0, 0.756863 )
+margin_left = 1656.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="InfoText" type="RichTextLabel" parent="."]
-margin_left = 808.0
-margin_right = 1008.0
-margin_bottom = 40.0
+margin_left = 1688.0
+margin_top = 24.0
+margin_right = 1888.0
+margin_bottom = 64.0
 text = "
 LoremIpsumDolorSitAmet
 "
 scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 1360.0
+margin_top = 784.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

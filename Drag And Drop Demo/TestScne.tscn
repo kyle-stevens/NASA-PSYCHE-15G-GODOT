@@ -1,45 +1,98 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Object.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Zones.tscn" type="PackedScene" id=2]
 [ext_resource path="res://UI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Art_Assets/spacecraft_outline.png" type="Texture" id=4]
+[ext_resource path="res://Art_Assets/spacecraft_silhouette.png" type="Texture" id=5]
+[ext_resource path="res://Audio Assets/construction.wav" type="AudioStream" id=6]
 
 [node name="TestScne" type="Node2D"]
 
-[node name="group 1 goal" parent="." instance=ExtResource( 2 )]
-position = Vector2( 352, 58 )
+[node name="outline" type="Sprite" parent="."]
+position = Vector2( 1136, 544 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 5 )
+
+[node name="lines" type="Sprite" parent="outline"]
+texture = ExtResource( 4 )
+
+[node name="rigt_solar_goal" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1408, 324 )
+object_id = 4
 is_goal = true
 
-[node name="group 1" parent="." instance=ExtResource( 2 )]
+[node name="right_solar_start" parent="." instance=ExtResource( 2 )]
+position = Vector2( 330, 386 )
+object_id = 4
+
+[node name="right_solar" parent="." instance=ExtResource( 1 )]
+position = Vector2( 330, 386 )
+object_id = 4
+
+[node name="bus_goal" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1144, 552 )
+is_goal = true
+
+[node name="bus_start" parent="." instance=ExtResource( 2 )]
 position = Vector2( 128, 128 )
 
-[node name="group 2 goal" parent="." instance=ExtResource( 2 )]
-position = Vector2( 352, 314 )
-object_id = 1
-is_goal = true
+[node name="bus" parent="." instance=ExtResource( 1 )]
+position = Vector2( 128, 128 )
 
-[node name="group 2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 128, 384 )
-object_id = 1
-
-[node name="group 3 goal" parent="." instance=ExtResource( 2 )]
-position = Vector2( 512, 272 )
+[node name="left_solar_goal" parent="." instance=ExtResource( 2 )]
+position = Vector2( 864, 764 )
 object_id = 2
 is_goal = true
 
-[node name="group 3 " parent="." instance=ExtResource( 2 )]
-position = Vector2( 320, 512 )
+[node name="left_solar_start" parent="." instance=ExtResource( 2 )]
+position = Vector2( 706, 290 )
 object_id = 2
 
-[node name="object 1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 128, 112 )
-
-[node name="object 3" parent="." instance=ExtResource( 1 )]
-position = Vector2( 376, 512 )
+[node name="left_solar" parent="." instance=ExtResource( 1 )]
+position = Vector2( 706, 290 )
 object_id = 2
 
-[node name="object 2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 80, 416 )
+[node name="magnet_goal" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1192, 632 )
+object_id = 3
+is_goal = true
+
+[node name="magnet_start" parent="." instance=ExtResource( 2 )]
+position = Vector2( 322, 706 )
+object_id = 3
+
+[node name="magnet" parent="." instance=ExtResource( 1 )]
+position = Vector2( 322, 706 )
+object_id = 3
+
+[node name="spectr_goal" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1272, 584 )
+object_id = 5
+is_goal = true
+
+[node name="spectr_start" parent="." instance=ExtResource( 2 )]
+position = Vector2( 130, 706 )
+object_id = 5
+
+[node name="spectr" parent="." instance=ExtResource( 1 )]
+position = Vector2( 130, 706 )
+object_id = 5
+
+[node name="dish_goal" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1200, 572 )
+object_id = 1
+is_goal = true
+
+[node name="dish_start" parent="." instance=ExtResource( 2 )]
+position = Vector2( 130, 898 )
+object_id = 1
+
+[node name="dish" parent="." instance=ExtResource( 1 )]
+position = Vector2( 130, 898 )
 object_id = 1
 
 [node name="UI" parent="." instance=ExtResource( 3 )]
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )

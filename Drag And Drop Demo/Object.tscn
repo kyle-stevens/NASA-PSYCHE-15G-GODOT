@@ -1,34 +1,93 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Object.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Art_Assets/bus.png" type="Texture" id=2]
+[ext_resource path="res://Art_Assets/magnetometer.png" type="Texture" id=3]
+[ext_resource path="res://Art_Assets/left_solar_array.png" type="Texture" id=4]
+[ext_resource path="res://Art_Assets/spectrometer.png" type="Texture" id=5]
+[ext_resource path="res://Art_Assets/right_solar_array.png" type="Texture" id=6]
+[ext_resource path="res://Art_Assets/dish.png" type="Texture" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "object2",
+"name": "bus",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "object1",
+"name": "magnet",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "right_solar",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "spectr",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "a_blank",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "left_solar",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "dish",
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 32.0
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 66.1825
+height = 11.5317
 
 [node name="Object" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.75, 0.75 )
 frames = SubResource( 1 )
-animation = "object2"
+animation = "magnet"
 
 [node name="Area2D" type="Area2D" parent="AnimatedSprite"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite/Area2D"]
+[node name="bus" type="CollisionPolygon2D" parent="AnimatedSprite/Area2D"]
+visible = false
+polygon = PoolVector2Array( -25.7918, -121.085, -129.525, -42.5501, -85.3333, 74.6667, 12.8458, 119.56, 130.438, 30.5253, 73.322, -82.8676 )
+disabled = true
+
+[node name="dish" type="CollisionShape2D" parent="AnimatedSprite/Area2D"]
+visible = false
 shape = SubResource( 2 )
+disabled = true
+
+[node name="left_solar" type="CollisionPolygon2D" parent="AnimatedSprite/Area2D"]
+visible = false
+polygon = PoolVector2Array( 292.116, -252.546, 206.792, -262.445, 25.7727, -128.566, -67.5654, -250.66, -232.085, -129.038, -139.69, -4.11538, -308.453, 128.349, -208.044, 262.228, -35.0381, 125.049, 58.7706, 251.857, 218.577, 120.807, 124.767, -3.17249, 301.544, -144.122, 309.558, -231.332 )
+disabled = true
+
+[node name="magnet" type="CollisionPolygon2D" parent="AnimatedSprite/Area2D"]
+visible = false
+polygon = PoolVector2Array( -53.107, -56.4923, -50.1138, 7.11387, -11.2018, 24.6991, -10.8276, 30.3114, -6.33775, 33.6788, -1.8479, 32.5563, 2.26778, 31.4339, 40.0573, 47.8967, 40.0573, 53.1348, 43.0506, 55.7539, 46.4179, 57.2505, 51.6561, 55.0056, 53.5269, 49.7674, 50.9078, 43.781, 46.4179, 43.781, 45.6697, 43.781, -9.70514, -29.5532 )
+disabled = true
+
+[node name="right_solar" type="CollisionPolygon2D" parent="AnimatedSprite/Area2D"]
+visible = false
+polygon = PoolVector2Array( -292.032, 252.185, -309.651, 232.364, -301.471, 144.584, -124.337, 2.688, -218.41, -120.96, -58.8953, -253.731, 35.1775, -125.994, 208.221, -263.484, 308.901, -129.14, 138.689, 3.632, 232.447, 129.482, 67.8985, 249.354, -26.1743, 127.909, -205.51, 262.254 )
+disabled = true
+
+[node name="spectr" type="CollisionPolygon2D" parent="AnimatedSprite/Area2D"]
+visible = false
+polygon = PoolVector2Array( -62.9628, -44.0132, -67.3725, 0.224894, 26.5112, 24.697, 23.3693, 33.3492, 57.6575, 42.4948, 67.0013, 28.7015, 39.8596, 2.89457, 32.7405, 14.0182 )
+disabled = true
 [connection signal="input_event" from="AnimatedSprite/Area2D" to="." method="_on_Area2D_input_event"]
 [connection signal="mouse_entered" from="AnimatedSprite/Area2D" to="." method="_on_Area2D_mouse_entered"]

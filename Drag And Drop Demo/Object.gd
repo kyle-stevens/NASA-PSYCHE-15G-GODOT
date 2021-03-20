@@ -3,11 +3,22 @@ extends Node2D
 var selected = false
 var rest_point
 var rest_nodes = []
+var completed : bool = false
 
-export(int, "Object 1", "Object 2", "Object 3") var object_id
+
+onready var bus_collision = get_node("AnimatedSprite/Area2D/bus")
+onready var dish_collision = get_node("AnimatedSprite/Area2D/dish")
+onready var left_solar_collision = get_node("AnimatedSprite/Area2D/left_solar")
+onready var magnet_collision = get_node("AnimatedSprite/Area2D/magnet")
+onready var right_solar_collision = get_node("AnimatedSprite/Area2D/right_solar")
+onready var spectr_collision = get_node("AnimatedSprite/Area2D/spectr")
+onready var sound_player = get_tree().get_root().get_node("TestScne/Sound")
+
+export(int, "bus","dish","left_solar","magnet","right_solar","spectr") var object_id
 var object_description
 onready var anim = get_node("AnimatedSprite")
 
+#change this when adding in ui sprite
 onready var ui_text = get_tree().get_root().get_node("TestScne/UI/InfoText")
 
 
@@ -17,21 +28,32 @@ func _ready():
 		if node.object_id == object_id:
 			rest_point = node.global_position
 	if object_id == 0:
-		object_description = "obj1"
-		anim.play("object1")
+		object_description = "bus"
+		anim.play("bus")
+		bus_collision.disabled = false
 	elif object_id == 1:
-		object_description = "obj2"
-		anim.play("object2")
-		anim.flip_h = true
-		anim.flip_v = true
+		object_description = "dish"
+		anim.play("dish")
+		dish_collision.disabled = false
 	elif object_id == 2:
-		object_description = "obj3"
-		anim.play("object2")
-		anim.flip_h = false
-		anim.flip_v = true
-		anim.rotate(3)
+		object_description = "left_solar"
+		anim.play("left_solar")
+		left_solar_collision.disabled = false
+	elif object_id == 3:
+		object_description = "magnet"
+		anim.play("magnet")
+		magnet_collision.disabled = false
+	elif object_id == 4:
+		object_description = "right_solar"
+		anim.play("right_solar")
+		right_solar_collision.disabled = false
+	elif object_id == 5:
+		object_description = "spectr"
+		anim.play("spectr")
+		spectr_collision.disabled = false
 	else:
-		#object_description="Not Working"
+		object_description="Not Working"
+		anim.play("a_blank")
 		pass
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
@@ -39,7 +61,7 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 		selected = true
 		
 func _physics_process(delta):
-	if selected:
+	if selected and not completed:
 		global_position = lerp(global_position, get_global_mouse_position(), 25 * delta)
 	else:
 		global_position = lerp(global_position, rest_point, 10 * delta)
@@ -50,7 +72,7 @@ func _input(event):
 		#ui_text.add_text(object_description)
 		#print(object_description)
 		
-		if event.button_index == BUTTON_LEFT and not event.pressed:
+		if event.button_index == BUTTON_LEFT and not event.pressed and not completed:
 			selected = false
 			var shortest_dist = 75
 			for child in rest_nodes:
@@ -59,6 +81,8 @@ func _input(event):
 					if child.is_goal:
 						#play sound here
 						child.select(child)
+						completed = true
+						sound_player.play()
 					rest_point = child.global_position
 					shortest_dist = distance
 					if(child.is_goal):
