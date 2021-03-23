@@ -20,8 +20,7 @@ margin_top = 24.0
 margin_right = 1888.0
 margin_bottom = 1024.0
 text = "
-LoremIpsumDolorSitAmet
-"
+Welcome to Nasa Psyche Space Game"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
