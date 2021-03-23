@@ -1,0 +1,26 @@
+[
+    {
+        "component": "Bus (Body)", 
+        "description": "The bus is the body of the spacecraft and is slightly bigger than a smart car and about as tall as a basketball hoop. Attached to the body are also the solar electric propulsion system, and the deep space optical communication device developed by a team at the Jet Propulsion Laboratory to communicate with a deep space probe using light instead of radio waves to communicate more data in less time."
+    },
+    {
+        "component": "X-Band High Gain Antenna",
+        "description": "The X-band radio telecommunications system is an instrument for measuring the gravity field of Psyche. This information will be combined with imagery to better understand the interior structure of Psyche."
+    },
+    {
+        "component": "Left Solar Array",
+        "description": "The left solar array is a group of solar panels arranged like a cross to provide power to the spacecraft, including the solar electric propulsion system."
+    },
+    {
+        "component": "Right Solar Array",
+        "description": "The right solar array is a group of solar panels arranged like a cross to provide power to the spacecraft, including the solar electric propulsion system."
+    },
+    {
+        "component": "Magnetometer",
+        "description": "The magnetometer is an instrument for detecting and measuring the remnant magnetic field of Psyche. It consists of two magnetic field sensors positioned along a boom and is developed by a team at the Massachusetts Institute of Technology and Technical University Denmark."
+    },
+    {
+        "component": "Gamma Ray and Neutron Spectrometer",
+        "description": "The gamma ray and neutron spectrometer is an instrument developed by a team at the Johns Hopkins University Applied Physics Laboratory for detecting, measuring, and mapping the elemental composition of Psyche. "
+    }
+]

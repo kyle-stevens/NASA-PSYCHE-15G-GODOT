@@ -18,7 +18,7 @@ __meta__ = {
 margin_left = 1688.0
 margin_top = 24.0
 margin_right = 1888.0
-margin_bottom = 64.0
+margin_bottom = 1024.0
 text = "
 LoremIpsumDolorSitAmet
 "

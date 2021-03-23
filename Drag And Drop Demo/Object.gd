@@ -21,34 +21,48 @@ onready var anim = get_node("AnimatedSprite")
 #change this when adding in ui sprite
 onready var ui_text = get_tree().get_root().get_node("TestScne/UI/InfoText")
 
+#Json Parse
+var dict = {}
+onready var file  = File.new()
+
 
 func _ready():
+	#Json Parse and assignment
+	file.open("res://Json/json_data.tres", file.READ)
+	var text = file.get_as_text()
+	#print("Contents" + text)
+	dict = JSON.parse(text).result
+	#print(dict[2]["component"])
+	file.close()
+	
+	
+	
 	rest_nodes = get_tree().get_nodes_in_group("zone")
 	for node in rest_nodes:
 		if node.object_id == object_id:
 			rest_point = node.global_position
 	if object_id == 0:
-		object_description = "bus"
+		object_description = dict[0]["component"]+":\n\t"+dict[0]["description"]
 		anim.play("bus")
 		bus_collision.disabled = false
 	elif object_id == 1:
-		object_description = "dish"
+		object_description = dict[1]["component"]+":\n\t"+dict[1]["description"]
 		anim.play("dish")
 		dish_collision.disabled = false
 	elif object_id == 2:
-		object_description = "left_solar"
+		object_description = dict[2]["component"]+":\n\t"+dict[2]["description"]
 		anim.play("left_solar")
 		left_solar_collision.disabled = false
 	elif object_id == 3:
-		object_description = "magnet"
+		object_description = dict[4]["component"]+":\n\t"+dict[4]["description"]
 		anim.play("magnet")
 		magnet_collision.disabled = false
 	elif object_id == 4:
-		object_description = "right_solar"
+		object_description = dict[3]["component"]+":\n\t"+dict[3]["description"]
 		anim.play("right_solar")
 		right_solar_collision.disabled = false
 	elif object_id == 5:
-		object_description = "spectr"
+		object_description = dict[5]["component"]+":\n\t"+dict[5]["description"]
 		anim.play("spectr")
 		spectr_collision.disabled = false
 	else:

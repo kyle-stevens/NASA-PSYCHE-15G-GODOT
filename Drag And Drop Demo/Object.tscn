@@ -25,9 +25,9 @@ animations = [ {
 "name": "right_solar",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "spectr",
+"name": "dish",
 "speed": 5.0
 }, {
 "frames": [  ],
@@ -40,9 +40,9 @@ animations = [ {
 "name": "left_solar",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "dish",
+"name": "spectr",
 "speed": 5.0
 } ]
 

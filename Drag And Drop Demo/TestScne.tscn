@@ -92,7 +92,7 @@ object_id = 1
 position = Vector2( 130, 898 )
 object_id = 1
 
-[node name="UI" parent="." instance=ExtResource( 3 )]
-
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
+
+[node name="UI" parent="." instance=ExtResource( 3 )]
